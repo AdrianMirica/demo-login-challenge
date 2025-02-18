@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "cd5ba0f9-8242-4ccc-bb3c-efc13b431a5c",
+		"name": "Coremaker demo login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6535844"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test-login\",\n    \"email\": \"test.login@coremaker.ro\",\n    \"password\": \"testlogin123!\",\n    \"fullName\": \"Adrian Mirica\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test-login\",\n    \"password\": \"testlogin123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user with username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0LWxvZ2luIiwiaWF0IjoxNzM5ODg2MDU1LCJleHAiOjE3Mzk4ODk2NTV9.d1ClOO12nT-MNHhjkq29_pCdfh5GbbcFVaRThLnFETk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0LWxvZ2luIiwiaWF0IjoxNzM5ODg2MDU1LCJleHAiOjE3Mzk4ODk2NTV9.d1ClOO12nT-MNHhjkq29_pCdfh5GbbcFVaRThLnFETk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/{test-login}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{test-login}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ME",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0LWxvZ2luIiwiaWF0IjoxNzM5ODg2MDU1LCJleHAiOjE3Mzk4ODk2NTV9.d1ClOO12nT-MNHhjkq29_pCdfh5GbbcFVaRThLnFETk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0LWxvZ2luIiwiaWF0IjoxNzM5ODg2MDU1LCJleHAiOjE3Mzk4ODk2NTV9.d1ClOO12nT-MNHhjkq29_pCdfh5GbbcFVaRThLnFETk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/{test-login}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{test-login}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
