@@ -14,7 +14,6 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Function;
 
 @Service
@@ -64,12 +63,12 @@ public class JWTService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    private Claims extractAllClaims(String jtwToken) {
+    private Claims extractAllClaims(String jwtToken) {
         return Jwts
                 .parserBuilder()
                 .setSigningKey(getSigningKey())
                 .build()
-                .parseClaimsJws(jtwToken)
+                .parseClaimsJws(jwtToken)
                 .getBody();
     }
 
@@ -77,7 +76,7 @@ public class JWTService {
         return extractExpiration(jwtToken).before(new Date());
     }
 
-    private Date extractExpiration(String jtwToken) {
-        return extractClaim(jtwToken, Claims::getExpiration);
+    private Date extractExpiration(String jwtToken) {
+        return extractClaim(jwtToken, Claims::getExpiration);
     }
 }
